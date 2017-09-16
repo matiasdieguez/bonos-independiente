@@ -2,6 +2,7 @@
 using System.Threading;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
+using BonosIndependiente.Server.Models;
 
 namespace BonosIndependiente.Server
 {
@@ -24,8 +25,13 @@ namespace BonosIndependiente.Server
 
         private void BroadcastNotifications(object state)
         {
-            if (BonosIndependienteWebClient.IsEnabled())
+            var lastStatus = DataAccess.GetServerData().IsStatusActive;
+            var newStatus = BonosWebClient.IsEnabled();
+
+            if (lastStatus == false && newStatus == true)
                 Clients.All.notify(NotificationHub.Notify());
+
+            DataAccess.SaveServerData(newStatus);
         }
     }
 }

@@ -34,5 +34,21 @@ namespace BonosIndependiente.Server
                 }
             };
         }
+
+        public static IEnumerable<Notification> Notify(bool value1, bool value2)
+        {
+            return new List<Notification>
+            {
+                new Notification
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Type = NotificationType.ReservaBonoHabilitada,
+                    Url = "http://bonos.clubaindependiente.com.ar/",
+                    NotificatioDateTime = DateTime.Now,
+                    Message = $"last status: {value1.ToString()} new status: {value2.ToString()}"
+                }
+            };
+        }
+
     }
 }

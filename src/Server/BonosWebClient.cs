@@ -2,7 +2,7 @@
 
 namespace BonosIndependiente.Server
 {
-    public class BonosIndependienteWebClient
+    public class BonosWebClient
     {
         public static bool IsEnabled()
         {

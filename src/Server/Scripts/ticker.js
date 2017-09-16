@@ -1,5 +1,4 @@
 ﻿$(function () {
-
     var hub = $.connection.notificationHub;
 
     hub.client.notify = function (obj) {
