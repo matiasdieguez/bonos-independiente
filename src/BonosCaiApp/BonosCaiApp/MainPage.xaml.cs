@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace BonosCaiApp
@@ -17,6 +13,16 @@ namespace BonosCaiApp
         private void GoPage_Clicked(object sender, EventArgs e)
         {
 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            var status = BonosWebClient.GetStatus();
+            if (status)
+                Status.Text = "La venta de bonos está habilitada!";
+            else
+                Status.Text = "La venta de bonos está cerrada";
         }
     }
 }
