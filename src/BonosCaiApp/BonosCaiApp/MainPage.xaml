@@ -2,10 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:BonosCaiApp"
-             x:Class="BonosCaiApp.MainPage">
+             x:Class="BonosCaiApp.MainPage"
+             BackgroundColor="#ba0707">
 
-	<Label Text="Welcome to Xamarin Forms!" 
+    <Image Source="cai.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+    <Label x:Name="Status" 
+           Margin="20,20,20,20"
+           Text="" 
+           TextColor="White"
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
-
+    <WebView x:Name="PageView" WidthRequest="400" HeightRequest="400"></WebView>
 </ContentPage>

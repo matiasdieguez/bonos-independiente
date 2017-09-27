@@ -13,5 +13,10 @@ namespace BonosCaiApp
         {
             InitializeComponent();
         }
+
+        private void GoPage_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
